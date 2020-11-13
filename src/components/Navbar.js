@@ -17,7 +17,20 @@ class Navbar extends Component {
           dStorage
         </a>
         <ul className="navbar-nav px-3">
-          <b className='text-white'>{'0x0'}</b>
+          <li>
+            
+            {this.props.account
+              ? <img
+                  alt=""
+                  className="ml-2"
+                  width="30"
+                  height="30"
+                  src={`data:image/png;base64,${new Identicon(this.props.account, 30).toString()}`}
+                />
+              : <span></span>
+            }
+          </li>
+          
         </ul>
       </nav>
     );
